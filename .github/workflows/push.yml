@@ -68,7 +68,7 @@ jobs:
 
     - name: RunTests1
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: VSTest.Console.exe x64\Release\UnitTest1.dll /TestCaseFilter:Name=TestAddition
+      run: VSTest.Console.ex x64\Release\UnitTe.dll /TestCaseFilter:Name=TestAddition
 
     - name: RunTests2
       working-directory: ${{env.GITHUB_WORKSPACE}}
