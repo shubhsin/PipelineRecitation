@@ -65,7 +65,19 @@ jobs:
       with:
         name: my-artifact
         path: x64\Release
-    
-    - name: RunTests
+
+    - name: RunTests1
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: VSTest.Console.exe  x64\Release\UnitTest1.dll
+      run: VSTest.Console.exe x64\Release\UnitTest1.dll /TestCaseFilter:Name=TestAddition
+
+    - name: RunTests2
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: VSTest.Console.exe x64\Release\UnitTest1.dll /TestCaseFilter:Name=TestSubtraction
+
+    - name: RunTests3
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: VSTest.Console.exe x64\Release\UnitTest1.dll /TestCaseFilter:Name=TestMultiplication
+
+    - name: RunTests4
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: VSTest.Console.exe x64\Release\UnitTest1.dll /TestCaseFilter:Name=TestDivisionByZero
